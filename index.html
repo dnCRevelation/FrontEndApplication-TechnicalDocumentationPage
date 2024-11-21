@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Technical Documentation Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav id="navbar">
+            <header>
+                <img src="typescript5.png" alt="TS Logo">
+                TypeScript
+            </header>
+            <ul>
+                <li><a href="#Introduction_to_TypeScript" class="nav-link">Introduction</a></li>
+                <li><a href="#History_of_TypeScript" class="nav-link">History of TypeScript</a></li>
+                <li><a href="#Getting_Started_With_TypeScript" class="nav-link">Getting Started with TypeScript</a></li>
+                <li><a href="#Core_Features_of_TypeScript" class="nav-link">Core Features of TypeScript</a></li>
+                <li><a href="#Conclusion" class="nav-link">Conclusion</a></li>
+                <li><a href="#References" class="nav-link">References</a></li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Introduction_to_TypeScript">
+                <header>
+                    Introduction to TypeScript
+                </header>
+                <article>
+
+                    <p>TypeScript is a strongly typed programming language that builds on JavaScript by adding static type definitions. It is developed and maintained by Microsoft and serves as a superset of JavaScript, meaning all JavaScript code is valid TypeScript.</p>
+
+                    <h3>Why Use TypeScript?</h3>
+                    <ul>
+                        <li><strong>Static Typing: </strong>Detect errors during development rather than runtime.</li>
+                        <li><strong>Improved Tooling: </strong>Better IntelliSense, autocompletion, and refactoring in IDEs.</li>
+                        <li><strong>Enhanced Code Quality: </strong>Type definitions make your code easier to read and maintain.</li>
+                        <li><strong>Compatibility: </strong> TypeScript compiles to plain JavaScript, making it compatible with any environment running JavaScript.</li>
+                    </ul>
+
+                    <h3>Who is it for?</h3>
+                    <p>TypeScript is ideal for developers working on medium to large-scale applications, especially those requiring long-term maintainability.</p>
+
+                </article>
+            </section>
+            <section class="main-section" id="History_of_TypeScript">
+                <header>
+                    History of TypeScript
+                </header>
+                <article>
+                    <ul>
+                        <li><strong>Origins: </strong>TypeScript was first introduced by Microsoft in October 2012. Anders Hejlsberg, the creator of C#, was a key figure in its development.</li>
+                        <li><strong>Purpose: </strong>It was designed to address JavaScript's lack of type safety and improve developer productivity for large codebases.</li>
+                        <li><strong>Adoption: </strong>Over the years, TypeScript has grown in popularity and is widely used in frameworks like<strong> Angular, React, </strong>and<strong> Vue.</strong></li>
+                        <li><strong>Current Version: </strong>The language continues to evolve with new features and updates being added regularly.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="Getting_Started_With_TypeScript">
+                <header>
+                    Getting Started with TypeScript
+                </header>
+                <article>
+
+                    <h3>Prerequisites</h3>
+                    <ul>
+                        <li>Familiarity with JavaScript basics.</li>
+                        <li>A code editor like <a href="https://code.visualstudio.com/">Visual Studio Code.</a></li>
+                    </ul>
+
+                    <h3>Step-by-Step Setup</h3>
+                    <ol>
+                        <li><strong>Install Node.js:</strong></li>
+                        <ul>
+                            <li>Download and install Node.js</li>
+                            <li>Verify installation:</li>
+                            <code>
+                                node -v
+                                npm -v
+                            </code>
+                        </ul>
+                        <li><strong>Install TypeScript:</strong></li>
+                        <ul>
+                            <li>Install the TypeScript compiler globally using npm:</li>
+                            <code>
+                                npm install -g typescript
+                            </code>
+                            <li>Verify installation:</li>
+                            <code>
+                                tsc -v
+                            </code>
+                        </ul>
+                        <li><strong>Create a TypeScript File:</strong></li>
+                        <ul>
+                            <li>Create a new .ts file, e.g., example.ts.</li>
+                            <li>Add some TypeScript code:</li>
+                            <code>
+                                let message: string = "Hello, TypeScript!";
+console.log(message);
+                            </code>
+                        </ul>
+                        <li><strong>Compile TypeScript to JavaScript:</strong></li>
+                        <ul>
+                            <li>Use the TypeScript compiler to transpile the .ts file to a .js file:</li>
+                            <code>
+                                tsc example.ts
+                            </code>
+                            <li>Run the JavaScript file:</li>
+                            <code>
+                                node example.js
+                            </code>
+                        </ul>
+                        <li><strong>Initialize a Project (Optional) :</strong></li>
+                        <ul>
+                            <li>Create a tsconfig.json file for project-level configuration:</li>
+                            <code>
+                                tsc --init
+                            </code>
+                        </ul>
+                    </ol>
+
+                </article>
+            </section>
+            <section class="main-section" id="Core_Features_of_TypeScript">
+                <header>
+                    Core Features of TypeScript
+                </header>
+                <article>
+                    <h3>Static Typing</h3>
+                    <ul>
+                        <li>TypeScript enforces type checks at compile time.</li>
+                        <code>
+                            let age: number = 25; // Valid
+                        </code>
+                        <code>
+                            age = "twenty-five"; // Error: Type 'string' is not assignable to type 'number'
+                        </code>
+                    </ul>
+                    <h3>Interfaces</h3>
+                    <ul>
+                        <li>Define custom types with interfaces.</li>
+                        <code>
+                            interface User {
+                                name: string;
+                                age: number;
+                              }
+                              const user: User = { name: "Alice", age: 30 };
+                              
+                        </code>
+                    </ul>
+                    <h3>Classes and Inheritance</h3>
+                    <ul>
+                        <li>Write object-oriented code with TypeScript.</li>
+                        <code>
+                            class Animal {
+                                constructor(public name: string) {}
+                                speak() {
+                                  console.log(`${this.name} makes a noise.`);
+                                }
+                              }
+                              class Dog extends Animal {
+                                speak() {
+                                  console.log(`${this.name} barks.`);
+                                }
+                              }
+                              const dog = new Dog("Rex");
+                              dog.speak(); // Rex barks.
+                              
+                        </code>
+                    </ul>
+                    <h3>Type Inference</h3>
+                    <ul>
+                        <li>TypeScript can infer types automatically, reducing verbosity.</li>
+                        <code>
+                            let message = "Hello, World!"; // Inferred as string
+                        </code>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="Conclusion">
+                <header>
+                  Conclusion 
+                </header>
+                <article>
+
+                    <p>TypeScript is an incredibly powerful tool for developers seeking to write scalable, maintainable, and error-resistant code. By building on JavaScript and introducing static typing, interfaces, and advanced tooling, TypeScript bridges the gap between flexibility and safety in modern development. With its increasing popularity and adoption in major frameworks and libraries, TypeScript is becoming a must-learn skill for web developers.</p>
+
+                    
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li><strong>Use Type Annotations: </strong>Explicitly declare types for better readability.</li>
+                        <li><strong>Enable Strict Mode: </strong>Add "strict": true in tsconfig.json to enforce best practices.</li>
+                        <li><strong>Modular Code: </strong>Use ES6 modules for better code organization.</li>
+                        <li><strong>Leverage TypeScript Libraries: </strong>Use libraries with built-in TypeScript definitions for seamless integration.</li>
+                    </ul>
+
+                    <h3>Learning Resources</h3>
+                    <ul>
+                        <li><strong>Official Docs: </strong><a href="https://www.typescriptlang.org/docs/">TypeScript Documentation</a></li>
+                        <li><strong>Interactive Tutorials: </strong><a href="https://www.typescriptlang.org/play/">TypeScript Playground</a></li>
+                        <li><strong>Books: </strong>"Programming TypeScript" by Boris Cherny.</li>
+                        <li><strong>Videos: </strong>Search for TypeScript tutorials on platforms like YouTube or Udemy.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="References">
+                <header>
+                    References
+                </header>
+                <article>
+                    <ul>
+                        <li>
+                            All of the documentation in this page is originally taken from
+                            <a href="https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html" target="_blank">TypeScript Official Docs</a>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
